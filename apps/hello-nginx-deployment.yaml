@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: 192.168.149.196:5000/argo_demo_docker:0.0.1
+        image: 192.168.149.196:5000/argo_demo_docker:1.0.0
         ports:
         - containerPort: 80
