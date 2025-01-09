@@ -1,0 +1,8 @@
+destination:
+  namespace: "default"
+  server: "https://kubernetes.default.svc"
+project: "default"
+source:
+  path: "apps"
+  repourl: "https://github.com/ctablero/argocd.git"
+  targetrevision: "HEAD"
