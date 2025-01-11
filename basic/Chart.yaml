@@ -1,0 +1,4 @@
+apiVersion: v2
+name: Argocd-basic
+version: 0.1.0
+description: Basic configuration for ArgoCD
