@@ -1,13 +1,18 @@
-# Argocd configurations to practise
+# Golfeado
 
-A collection of argocd configuration manifest to deploy argocd using the declarative way.
+A collection of argocd CRDs resources grouped in charts.
+
+Every chart represents a common use case or scenarios for argocd config.
 
 ## Estructure
 
-You will find custom config folders each one with different combination of configuration for the argocd. Every subfolder will have everything needed to apply the argocd and particular documentation.
-
+You will find chart folders each one with different combination of configuration for the argocd. Every subfolder will have everything needed to apply the argocd and particular documentation.
 
 Feel free to explore the different combinations and experiment with deploying them to start ArgoCD.
+
+## Helmfile
+
+Even though we can use helm commands to deploy a chart, this repo is using helmfile for learning purposes, feel free to use the same or other.
 
 ## Getting Started
 
