@@ -2,8 +2,6 @@ releases:
   - name: argocd-basic
     namespace: argocd
     chart: ./basic
-    values:
-      - "./basic-values.yaml"
     version: 0.1.0
     installed: true
     wait: true

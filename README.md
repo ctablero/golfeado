@@ -18,25 +18,30 @@ Even though we can use helm commands to deploy a chart, this repo is using helmf
 
 To get started with this repository, follow these steps:
 
-1. Clone the repository to your local machine:
+1. Install ArgoCD on your Kubernetes cluster. You can find installation instructions in the official ArgoCD documentation.
+
+2. Clone the repository to your local machine:
 
     ```bash
-    git clone https://github.com/ctablero/argocd.git
+    git clone https://github.com/ctablero/golfeado.git
     ```
 
-2. Change into any `custom-config` directory:
+3. Prepare a  `values.yaml` directory to setup variables according the implementation you need:
 
     ```bash
-    cd custom-config
-    ```
+    touch values.yaml
+    ``` 
 
-3. Install ArgoCD on your Kubernetes cluster. You can find installation instructions in the official ArgoCD documentation.
+4. Perform a dry-run/plan of the apply
+
+    ```bash
+    helmfile diff --values values.yaml
+    ```
 
 4. Deploy customized argocd resources using kubectl.
 
     ```bash
-    cd custom-config
-    kubectl apply -f .
+    helmfile apply --values values.yaml
     ```
 
 5. Monitor the deployment status using the ArgoCD UI or CLI.
