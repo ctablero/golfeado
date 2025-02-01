@@ -1,27 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-    name: basic-project
+    name: {{ .Values.project.name }}
     namespace: argocd
     finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-    description: "This is a basic project"
+    description: {{ .Values.project.description }}
     sourceRepos: 
     - '*'
-    destinations:
-    - namespace: "default"
-      server: "https://kubernetes.default.svc"
+    destinations: {{ .Values.project.destinations | toYaml | nindent 8 }}
     clusterResourceWhitelist:
     - group: ''
       kind: 'Namespace'
-    namespaceResourceBlacklist:
-    - group: ''
-      kind: 'ResourceQuota'
-    - group: ''
-      kind: 'LimitRange'
-    - group: ''
-      kind: 'NetworkPolicy'
     namespaceResourceWhitelist:
     - group: 'apps'
       kind: 'Deployment'
