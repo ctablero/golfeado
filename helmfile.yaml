@@ -1,7 +1,7 @@
 releases:
   - name: argocd-basic
     namespace: argocd
-    chart: ./basic
+    chart: ./apps
     version: 0.1.0
     installed: true
     wait: true

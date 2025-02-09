@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+  name: {{ .Values.application.name }}
+  namespace: argocd
+specs:
+  project: {{ .Values.project.name }}
+  destination:
+    namespace: {{ .Values.application.destination.namespace }}
+    server: {{ .Values.application.destination.server }}
+  source:
+    path: {{ .Values.application.source.path }}
+    repoURL: {{ .Values.application.source.repourl }}
+    targetRevision: {{ .Values.application.source.targetrevision }}
+  syncPolicy:
+    automated:
+      allowEmpty: {{ .Values.application.syncPolicy.automated.allowEmpty }}
+      prune: {{ .Values.application.syncPolicy.automated.prune }}
+      selfHeal: {{ .Values.application.syncPolicy.automated.selfHeal }}
