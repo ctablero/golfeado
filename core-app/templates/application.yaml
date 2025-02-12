@@ -5,8 +5,8 @@ metadata:
   - resources-finalizer.argocd.argoproj.io
   name: {{ .Values.application.name }}
   namespace: argocd
-specs:
-  project: {{ .Values.project.name }}
+spec:
+  project: default
   destination:
     namespace: {{ .Values.application.destination.namespace }}
     server: {{ .Values.application.destination.server }}
