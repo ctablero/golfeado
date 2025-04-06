@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+    name: {{ .Values.project.name }}
+    namespace: argocd
+    finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+    description: {{ .Values.project.description }}
+    sourceRepos: 
+    - '*'
+    destinations: {{ .Values.project.destinations | toYaml | nindent 8 }}
+    clusterResourceWhitelist:
+    - group: ''
+      kind: 'Namespace'
+    namespaceResourceWhitelist:
+    - group: 'apps'
+      kind: 'Deployment'
+    - group: 'apps'
+      kind: 'StatefulSet'
+    - group: 'apps'
+      kind: 'Service'
+    - group: 'apps'
+      kind: 'Application'
+    roles:
+    - name: readonly
+      description: "Read only permissions to the project"
+      policies:
+      - p, proj:my-project:read-only, applications, get, my-project/*, allow
+      groups:
+      - my-oidc-group

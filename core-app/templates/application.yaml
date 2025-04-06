@@ -2,11 +2,11 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   finalizers:
-    - resources-finalizer.argocd.argoproj.io
+  - resources-finalizer.argocd.argoproj.io
   name: {{ .Values.application.name }}
   namespace: argocd
 spec:
-  project: {{ .Values.project.name }}
+  project: default
   destination:
     namespace: {{ .Values.application.destination.namespace }}
     server: {{ .Values.application.destination.server }}
