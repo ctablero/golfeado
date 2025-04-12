@@ -1,15 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-    name: {{ .Values.project.name }}
+    name: basic-project
     namespace: argocd
     finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-    description: {{ .Values.project.description }}
+    description: "This is a basic project"
     sourceRepos: 
     - '*'
-    destinations: {{ .Values.project.destinations | toYaml | nindent 8 }}
+    destinations:
+    - namespace: 'default'
+      server: 'https://kubernetes.default.svc'
     clusterResourceWhitelist:
     - group: ''
       kind: 'Namespace'
@@ -20,8 +22,6 @@ spec:
       kind: 'StatefulSet'
     - group: 'apps'
       kind: 'Service'
-    - group: 'apps'
-      kind: 'Application'
     roles:
     - name: readonly
       description: "Read only permissions to the project"

@@ -1,0 +1,12 @@
+resources:
+  - ../../base/apps
+  - ../../base/projects
+
+patches:
+  - target:
+      kind: Application
+      name: core-app
+    patch: |
+      - op: replace
+        path: /metadata/name
+        value: core-app-dev

@@ -1,18 +1,15 @@
 # Golfeado
 
-A collection of argocd CRDs resources grouped in charts.
-
-Every chart represents a common use case or scenarios for argocd config.
+An approach to bootstrap an ArgoCD cluster using gitops approach, the app-of-apps pattern and Kustomize tool.
 
 ## Estructure
 
-You will find chart folders each one with different combination of configuration for the argocd. Every subfolder will have everything needed to apply the argocd and particular documentation.
+You will have:
+
+1. A base folder with all CRDs organized by type
+2. An environments folder where you from base and overlay
 
 Feel free to explore the different combinations and experiment with deploying them to start ArgoCD.
-
-## Helmfile
-
-Even though we can use helm commands to deploy a chart, this repo is using helmfile for learning purposes, feel free to use the same or other.
 
 ## Getting Started
 
@@ -26,22 +23,10 @@ To get started with this repository, follow these steps:
     git clone https://github.com/ctablero/golfeado.git
     ```
 
-3. Prepare a  `values.yaml` directory to setup variables according the implementation you need:
+3. Execute the bootstrap according the environment:
 
     ```bash
-    touch values.yaml
-    ``` 
-
-4. Perform a dry-run/plan of the apply
-
-    ```bash
-    helmfile diff --values values.yaml
-    ```
-
-4. Deploy customized argocd resources using kubectl.
-
-    ```bash
-    helmfile apply --values values.yaml
+    k apply -k environments/<ENVIRONMENT>/
     ```
 
 5. Monitor the deployment status using the ArgoCD UI or CLI.
