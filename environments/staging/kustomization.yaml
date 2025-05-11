@@ -1,0 +1,13 @@
+resources:
+  - ../../base/apps
+  - ../../base/projects
+
+patches:
+  - target:
+      kind: Application
+      name: core-app
+    path: set_core_app_labels.yaml
+  - target:
+      kind: Application
+      name: core-app
+    path: set_sync_policy.yaml
