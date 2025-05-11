@@ -14,8 +14,3 @@ spec:
     path: apps
     repoURL: https://github.com/ctablero/bienmesabe.git
     targetRevision: HEAD
-  syncPolicy:
-    automated:
-      allowEmpty: false
-      prune: true
-      selfHeal: true
