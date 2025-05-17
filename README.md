@@ -7,7 +7,7 @@ An approach to bootstrap an ArgoCD cluster using gitops approach, the app-of-app
 You will have:
 
 1. A base folder with all CRDs organized by type
-2. An environments folder where you from base and overlay
+2. An environments folder where you can overlay from base
 
 Feel free to explore the different combinations and experiment with deploying them to start ArgoCD.
 
@@ -23,7 +23,19 @@ To get started with this repository, follow these steps:
     git clone https://github.com/ctablero/golfeado.git
     ```
 
-3. Execute the bootstrap according the environment:
+3. Modify patch files according your necesities per environment.
+   
+   For example, edit the environments/staging/child-apps-source.yaml patch file to configure the source of your child apps:
+
+    ```yaml
+    spec:
+        source:
+            path: apps
+            repoURL: https://github.com/ctablero/bienmesabe.git
+            targetRevision: HEAD
+    ```
+
+4. Execute the bootstrap according the environment:
 
     ```bash
     k apply -k environments/<ENVIRONMENT>/

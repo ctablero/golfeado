@@ -11,3 +11,11 @@ patches:
       kind: Application
       name: core-app
     path: set_sync_policy.yaml
+  - target:
+      kind: Application
+      name: core-app
+    path: child_apps_source.yaml
+  - target:
+      kind: Application
+      name: core-app
+    path: cluster_destination.yaml
