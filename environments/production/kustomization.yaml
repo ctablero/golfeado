@@ -7,3 +7,11 @@ patches:
       kind: Application
       name: core-app
     path: set_core_app_labels.yaml
+  - target:
+      kind: Application
+      name: core-app
+    path: child_apps_source.yaml
+  - target:
+      kind: Application
+      name: core-app
+    path: cluster_destination.yaml

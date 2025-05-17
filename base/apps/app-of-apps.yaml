@@ -8,9 +8,6 @@ metadata:
 spec:
   project: default
   destination:
-    namespace: default
-    server: https://kubernetes.default.svc
+    server: https://url-of-the-target-clusters-k8s-control-plane
   source:
-    path: apps
-    repoURL: https://github.com/ctablero/bienmesabe.git
-    targetRevision: HEAD
+    repoURL: https://url-of-the-repo-containing-child-apps
