@@ -1,12 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-    name: basic-project
+    name: app-dev-observer
     namespace: argocd
     finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-    description: "This is a basic project"
+    description: "Developer portal where end users can see and perform issue triage and also do on-demand syncs when needed"
     sourceRepos: 
     - '*'
     destinations:
