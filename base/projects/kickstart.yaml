@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+    name: kickstart-project
+    namespace: argocd
+    finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+    description: "Blueprint project for applications"
+    clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+    destinations:
+    - namespace: '*'
+      server: '*'
+    sourceRepos:
+    - '*'
+    roles:
+    - name: project-operator
+      description: "View and sync"
+      policies:
+      - p, proj:kickstart-project:project-operator, applications, get, kickstart-project/*, allow
+      - p, proj:kickstart-project:project-operator, applications, sync, kickstart-project/*, allow
+      groups:
+      - Developers
