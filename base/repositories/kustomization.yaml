@@ -1,0 +1,3 @@
+resources:
+  - ssh-keys-secrets.yaml
+  - ssh-known-hosts-cm.yaml
