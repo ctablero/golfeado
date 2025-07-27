@@ -1,6 +1,7 @@
 resources:
   - ../../base/apps
   - ../../base/projects
+  - ../../base/repositories
 
 patches:
   - target:
