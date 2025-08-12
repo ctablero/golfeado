@@ -11,6 +11,12 @@ You will have:
 
 Feel free to explore the different combinations and experiment with deploying them to start ArgoCD.
 
+## Safe upload of Secrets to Repository
+
+Secrets definitions in this repo are using https://github.com/bitnami-labs/sealed-secrets to safely upload secrets resource code to the repo. Follow that guide to Prepare the Cluster to manage SealedSecrets.
+
+Notice that you will not be able to apply those sealed resources as it was prepared the version of the sealed secret controller I installed. Instead you have to create your own. More notes in the sealed secrets repo.
+
 ## Getting Started
 
 To get started with this repository, follow these steps:
