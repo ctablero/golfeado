@@ -1,0 +1,2 @@
+resources:
+  - remote-cluster-secret.yaml
