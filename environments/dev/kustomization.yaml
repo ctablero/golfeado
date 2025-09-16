@@ -2,6 +2,7 @@ resources:
   - ../../base/apps
   - ../../base/projects
   - ../../base/repositories
+  - ../../base/clusters
 
 patches:
   - target:
