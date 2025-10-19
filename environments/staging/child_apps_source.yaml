@@ -4,6 +4,6 @@ metadata:
   name: core-app
 spec:
   source:
-    path: apps
-    repoURL: https://github.com/ctablero/bienmesabe.git
+    path: examples/helm/basic
+    repoURL: https://github.com/ctablero/golfeado.git
     targetRevision: HEAD
